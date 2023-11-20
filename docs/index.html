@@ -22,7 +22,12 @@
         }
 
         .main::-webkit-scrollbar {
-            width: 0;
+            display: none; /* for Chrome, Safari, and Opera */
+        }
+
+        .main{
+            -ms-overflow-style: none; /* for Internet Explorer, Edge */
+            scrollbar-width: none; /* for Firefox */
         }
     </style>
 </head>
