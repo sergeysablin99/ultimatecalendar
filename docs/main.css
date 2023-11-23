@@ -1,0 +1,67 @@
+/*#content div {*/
+/*    width: 50px;*/
+/*    height: 50px;*/
+/*    border: 1px solid black;*/
+/*    margin: 1% 2%;*/
+/*    flex: 0 0 auto;*/
+/*}*/
+
+
+/*#left-button, #right-button {*/
+/*    border: 1px solid black;*/
+/*    padding: 1%;*/
+/*    margin: 1%;*/
+/*}*/
+
+
+#calendar-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: max-content;
+}
+
+#calendar-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: max-content;
+    justify-content: space-between
+}
+
+#calendar-controls {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: max-content;
+    justify-content: space-between
+}
+
+#calendar-dates {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: max-content;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    flex: 0 0 auto;
+}
+#calendar-dates::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+#calendar-dates {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+}
+
+.calendar-date-item {
+    border: 1px solid black;
+    margin: 5px 5px;
+    flex-basis: 50px;
+    flex-shrink: 0;
+}
+
+.calendar-control-buttons {
+    margin: 5px 5px;
+}

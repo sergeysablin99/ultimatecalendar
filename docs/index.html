@@ -1,4 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let WebApp = window.Telegram.WebApp;
@@ -9,54 +14,186 @@
 
         MainButton.show();
         // BackButton.show();
-
-
     </script>
-    <style>
-        .main div {
-            width: 100px;
-            height: 100px;
-            border: 1px solid black;
-            margin: 1% 2%;
-            flex: 0 0 auto;
-        }
 
-        .main::-webkit-scrollbar {
-            display: none; /* for Chrome, Safari, and Opera */
-        }
-
-        .main{
-            -ms-overflow-style: none; /* for Internet Explorer, Edge */
-            scrollbar-width: none; /* for Firefox */
-        }
-    </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0; height: 100%; width: 100%;">
 
-<div style="width: 100%; height: max-content; display: flex; justify-content: center">
-    <div class="main" style="width: 1000%; padding: 5%; display: flex; overflow-x: scroll">
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>1</div>
-        <div>2</div>
-        <div>2</div>
-        <div>2</div>
-        <div>2</div>
-        <div>3</div>
-        <div>3</div>
-        <div>3</div>
-        <div>3</div>
-        <div>3</div>
-        <div>3</div>
-        <div>4</div>
-        <div>4</div>
-        <div>4</div>
-        <div>4</div>
+<!--<div style="width: 100%; height: max-content; display: flex; justify-content: center">-->
+<!--    <div style="width: 50%; padding: 5%;">-->
+<!--        <div style="display: flex; justify-content: space-between; margin-left: 2%">-->
+<!--            <div>-->
+<!--                Название месяца-->
+<!--            </div>-->
+<!--            <div style="display: flex">-->
+<!--                <div id="calendar-prev-button">-->
+<!--                    Влево-->
+<!--                </div>-->
+<!--                <div id="calendar-next-button">-->
+<!--                    Вправо-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div id="content" style="display: flex; overflow-x: scroll">-->
+<!--            <div>1</div>-->
+<!--            <div>2</div>-->
+<!--            <div>3</div>-->
+<!--            <div>4</div>-->
+<!--            <div>5</div>-->
+<!--            <div>6</div>-->
+<!--            <div>7</div>-->
+<!--            <div>8</div>-->
+<!--            <div>9</div>-->
+<!--            <div>1</div>-->
+<!--            <div>2</div>-->
+<!--            <div>3</div>-->
+<!--            <div>4</div>-->
+<!--            <div>5</div>-->
+<!--            <div>6</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div id="calendar-container">
+    <div id="calendar-header-row">
+        <div id="calendar-header">
+            <div id="calendar-month-name-col">Ноябрь</div>
+            <div id="calendar-controls-col">
+                <div id="calendar-controls">
+                    <div id="calendar-prev-button" class="calendar-control-buttons"><</div>
+                    <div id="calendar-next-button" class="calendar-control-buttons">></div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div id="calendar-dates-row">
+        <div id="calendar-dates">
+            <div class="calendar-date-item">1</div>
+            <div class="calendar-date-item">2</div>
+            <div class="calendar-date-item">3</div>
+            <div class="calendar-date-item">4</div>
+            <div class="calendar-date-item">5</div>
+            <div class="calendar-date-item">6</div>
+            <div class="calendar-date-item">7</div>
+            <div class="calendar-date-item">8</div>
+            <div class="calendar-date-item">9</div>
+            <div class="calendar-date-item">1</div>
+            <div class="calendar-date-item">2</div>
+            <div class="calendar-date-item">3</div>
+            <div class="calendar-date-item">4</div>
+            <div class="calendar-date-item">5</div>
+            <div class="calendar-date-item">6</div>
+            <div class="calendar-date-item">1</div>
+            <div class="calendar-date-item">2</div>
+            <div class="calendar-date-item">3</div>
+            <div class="calendar-date-item">4</div>
+            <div class="calendar-date-item">5</div>
+            <div class="calendar-date-item">6</div>
+            <div class="calendar-date-item">7</div>
+            <div class="calendar-date-item">8</div>
+            <div class="calendar-date-item">9</div>
+            <div class="calendar-date-item">1</div>
+            <div class="calendar-date-item">2</div>
+            <div class="calendar-date-item">3</div>
+            <div class="calendar-date-item">4</div>
+            <div class="calendar-date-item">5</div>
+            <div class="calendar-date-item">6</div>
+            <div class="calendar-date-item">1</div>
+            <div class="calendar-date-item">2</div>
+            <div class="calendar-date-item">3</div>
+            <div class="calendar-date-item">4</div>
+            <div class="calendar-date-item">5</div>
+            <div class="calendar-date-item">6</div>
+            <div class="calendar-date-item">7</div>
+            <div class="calendar-date-item">8</div>
+            <div class="calendar-date-item">9</div>
+            <div class="calendar-date-item">1</div>
+            <div class="calendar-date-item">2</div>
+            <div class="calendar-date-item">3</div>
+            <div class="calendar-date-item">4</div>
+            <div class="calendar-date-item">5</div>
+            <div class="calendar-date-item">6</div>
+            <div class="calendar-date-item">1</div>
+            <div class="calendar-date-item">2</div>
+            <div class="calendar-date-item">3</div>
+            <div class="calendar-date-item">4</div>
+            <div class="calendar-date-item">5</div>
+            <div class="calendar-date-item">6</div>
+            <div class="calendar-date-item">7</div>
+            <div class="calendar-date-item">8</div>
+            <div class="calendar-date-item">9</div>
+            <div class="calendar-date-item">1</div>
+            <div class="calendar-date-item">2</div>
+            <div class="calendar-date-item">3</div>
+            <div class="calendar-date-item">4</div>
+            <div class="calendar-date-item">5</div>
+            <div class="calendar-date-item">6</div>
+            <div class="calendar-date-item">1</div>
+            <div class="calendar-date-item">2</div>
+            <div class="calendar-date-item">3</div>
+            <div class="calendar-date-item">4</div>
+            <div class="calendar-date-item">5</div>
+            <div class="calendar-date-item">6</div>
+            <div class="calendar-date-item">7</div>
+            <div class="calendar-date-item">8</div>
+            <div class="calendar-date-item">9</div>
+            <div class="calendar-date-item">1</div>
+            <div class="calendar-date-item">2</div>
+            <div class="calendar-date-item">3</div>
+            <div class="calendar-date-item">4</div>
+            <div class="calendar-date-item">5</div>
+            <div class="calendar-date-item">100</div>
+        </div>
+    </div>
+    <div id="calendar-slots"></div>
 </div>
 </body>
+
+<script>
+    document.getElementById('calendar-prev-button').onclick = function () {
+        // scrollLeft(document.getElementById('content'), -300, 1000);
+        var elem = document.getElementsByClassName("calendar-date-item")[0]
+        var style = window.getComputedStyle(elem)
+        var width = parseInt(style.width, 10) + parseInt(style.marginLeft, 10) + parseInt(style.marginRight, 10)
+        + parseInt(style.borderLeftWidth, 10) + parseInt(style.borderLeftWidth, 10)
+        scrollLeft(document.getElementById('calendar-dates'), -width*7, 1000)
+    }
+
+    document.getElementById('calendar-next-button').onclick = function () {
+        var elem = document.getElementsByClassName("calendar-date-item")[0]
+        var style = window.getComputedStyle(elem)
+        var width = parseInt(style.width, 10) + parseInt(style.marginLeft, 10) + parseInt(style.marginRight, 10)
+        + parseInt(style.borderLeftWidth, 10) + parseInt(style.borderLeftWidth, 10)
+        scrollLeft(document.getElementById('calendar-dates'), width*7, 1000)
+    }
+
+    function scrollLeft(element, change, duration) {
+        var start = element.scrollLeft,
+            currentTime = 0,
+            increment = 30;
+
+        console.log(start)
+
+        var animateScroll = function () {
+            currentTime += increment;
+            var val = Math.easeInOutQuad(currentTime, start, change, duration);
+            element.scrollLeft = val;
+            if (currentTime < duration) {
+                setTimeout(animateScroll, increment);
+            }
+        };
+        animateScroll();
+    }
+
+    //t = current time
+    //b = start value
+    //c = change in value
+    //d = duration
+    Math.easeInOutQuad = function (t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    };
+</script>
+</html>
