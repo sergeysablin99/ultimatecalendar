@@ -42,5 +42,7 @@
     "not ie 11"
   ],
   "pre-commit.silent": "false",
-  "pre-commit": ["build"]
+  "pre-commit": [
+    "build"
+  ]
 }

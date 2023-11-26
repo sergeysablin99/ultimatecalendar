@@ -1,5 +1,5 @@
 <template>
-  <!--  <CarouselCalendar msg="Welcome to Your Vue.js App"/>-->
+  <CarouselCalendar msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
