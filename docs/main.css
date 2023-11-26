@@ -13,77 +13,75 @@
 /*    margin: 1%;*/
 /*}*/
 
-
-#calendar-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: max-content;
-    padding: 0% 1%;
-    box-sizing: border-box;
+.body {
+    margin-top: 1%; padding: 0; height: 100%; width: 100%;
 }
 
-#calendar-header {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: max-content;
-    justify-content: space-between
-}
+/*#calendar-container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    width: 100%;*/
+/*    height: max-content;*/
+/*    padding: 0% 1%;*/
+/*    box-sizing: border-box;*/
+/*}*/
 
-#calendar-controls {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: max-content;
-    justify-content: space-between
-}
+/*#calendar-header {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    width: 100%;*/
+/*    height: max-content;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    margin: 0 5px;*/
+/*}*/
 
-#calendar-dates {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: max-content;
-    justify-content: flex-start;
-    overflow-x: scroll;
-    flex: 0 0 auto;
-}
+/*#calendar-controls {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    width: 100%;*/
+/*    height: max-content;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+/*#calendar-dates {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    width: 100%;*/
+/*    height: max-content;*/
+/*    justify-content: flex-start;*/
+/*    overflow-x: scroll;*/
+/*    flex: 0 0 auto;*/
+/*    -ms-overflow-style: none; !* for Internet Explorer, Edge *!*/
+/*    scrollbar-width: none; !* for Firefox *!*/
+/*}*/
 /*#calendar-dates::-webkit-scrollbar {*/
 /*    display: none; !* for Chrome, Safari, and Opera *!*/
 /*}*/
 
-#calendar-dates {
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
-}
 
-.calendar-date-item {
-    border: 1px solid black;
-    border-radius: 10%;
-    margin: 5px 5px;
-    padding: 5px 5px;
-    /*flex-basis: 30px;*/
-    justify-content: center;
-    flex-shrink: 0;
-}
+/*.calendar-date-item {*/
+/*    border: 1px solid black;*/
+/*    border-radius: 10%;*/
+/*    margin: 5px 5px;*/
+/*    padding: 5px 5px;*/
+/*    !*flex-basis: 30px;*!*/
+/*    justify-content: center;*/
+/*    flex-shrink: 0;*/
+/*}*/
 
-.calendar-control-buttons {
-    margin: 5px 5px;
-    border: 1px solid black;
-    padding: 1px 4px;
-    background-color: transparent;
-    text-align: center;
-    /* transition:*/
-    /*width 2s,*/
-    /*height 2s,*/
-    /*background-color 2s,*/
-    /*rotate 2s;*/
-}
-
-@keyframes infiniteScroll {
-  from {transform: translateX(0%) }
-  to {transform: translateX(-100px);}
-}
+/*.calendar-control-buttons {*/
+/*    margin: 5px 5px;*/
+/*    border: 1px solid black;*/
+/*    padding: 1px 4px;*/
+/*    background-color: transparent;*/
+/*    text-align: center;*/
+/*    !* transition:*!*/
+/*    !*width 2s,*!*/
+/*    !*height 2s,*!*/
+/*    !*background-color 2s,*!*/
+/*    !*rotate 2s;*!*/
+/*}*/
 
 /*body:has(#calendar-prev-button:active) .calendar-date-item {*/
 /*  animation-name: infiniteScroll;*/
