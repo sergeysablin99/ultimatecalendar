@@ -41,5 +41,6 @@
     "not dead",
     "not ie 11"
   ],
+  "pre-commit.silent": "false",
   "pre-commit": ["build"]
 }
