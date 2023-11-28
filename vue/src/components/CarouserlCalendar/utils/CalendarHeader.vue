@@ -7,8 +7,8 @@
     <div id="calendar-month-name-col">Ноябрь</div>
     <div id="calendar-controls-col">
       <div id="calendar-controls">
-        <button id="calendar-prev-button" class="calendar-control-buttons" @click="$emit('prev-clicked')">&lt;</button>
-        <button id="calendar-next-button" class="calendar-control-buttons" @click="$emit('next-clicked')">&gt;</button>
+        <button id="calendar-prev-button" class="calendar-control-buttons" @click="$emit('prevClick')">&lt;</button>
+        <button id="calendar-next-button" class="calendar-control-buttons" @click="$emit('nextClick')">&gt;</button>
       </div>
     </div>
   </div>
