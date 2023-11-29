@@ -13,7 +13,8 @@ let d = []
 for (let i = 0; i < 100; i++)
   d.push({
     weekDay: "Пн",
-    date: 1,
+    date: i,
+    month: i,
     slots: ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
   })
 
@@ -60,7 +61,7 @@ function handleScroll() {
       </div>
     </div>
     <div id="calendar-slots-row" v-if="selectedDate !== null">
-      <CalendarDateSlots :slots="dates[selectedDate].slots" :key="selectedDate"/>
+      <CalendarDateSlots :dateInfo="dates[selectedDate]" :key="selectedDate"/>
     </div>
   </div>
 </template>

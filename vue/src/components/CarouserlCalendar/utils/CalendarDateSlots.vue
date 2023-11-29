@@ -1,7 +1,7 @@
 <script setup>
 import {onBeforeUnmount, ref} from "vue";
 
-const props = defineProps(['slots'])
+const props = defineProps(['dateInfo'])
 let selectedSlot = ref(null)
 
 let webApp = window.Telegram.WebApp;
@@ -9,7 +9,14 @@ var MainButton = webApp.MainButton;
 
 
 function slotClicked(num) {
-  MainButton.setText("Selected slot:" + num)
+  MainButton.setText(
+      "Selected date:" +
+      props.dateInfo.date +
+      " month: " +
+      props.dateInfo.month +
+      " slot: " +
+      props.dateInfo.slots[num]
+  )
   MainButton.show();
 }
 
@@ -22,7 +29,7 @@ onBeforeUnmount(async () => {
 
 <template>
   <div class="calendar-date-item-slot-container">
-    <div class="calendar-date-item-slot-item" v-for="(s, i) in props.slots">
+    <div class="calendar-date-item-slot-item" v-for="(s, i) in props.dateInfo.slots">
       <input :id="`slots-${i}`" type="radio" name="slots" v-model="selectedSlot" :value="i" @click="slotClicked(i)">
       <label :for="`slots-${i}`">
         {{ s }}
