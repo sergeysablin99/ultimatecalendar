@@ -64,6 +64,7 @@ function handleScroll() {
     <div id="calendar-slots-row" v-if="selectedDate !== null">
       <CalendarDateSlots :dateInfo="dates[selectedDate]" :key="selectedDate"/>
     </div>
+    <div> {{ isActiveScrollLeft }} {{ isActiveScrollRight }}</div>
   </div>
 </template>
 
