@@ -13,17 +13,17 @@ function slotClicked(num) {
   MainButton.show();
 }
 
-onBeforeUnmount(() => {
-  selectedSlot.value = null
+onBeforeUnmount(async () => {
   MainButton.hide();
-
 })
+
+
 </script>
 
 <template>
   <div class="calendar-date-item-slot-container">
-    <div class="calendar-date-item-slot-item" v-for="(s, i) in slots">
-      <input :id="`slots-${i}`" type="radio" name="slots" v-model="selectedSlot" :value="i" @click.end="slotClicked(i)">
+    <div class="calendar-date-item-slot-item" v-for="(s, i) in props.slots">
+      <input :id="`slots-${i}`" type="radio" name="slots" v-model="selectedSlot" :value="i" @click="slotClicked(i)">
       <label :for="`slots-${i}`">
         {{ s }}
       </label>

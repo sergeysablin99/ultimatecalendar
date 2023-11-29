@@ -50,7 +50,7 @@ function handleScroll() {
       </div>
     </div>
     <div id="calendar-slots-row" v-if="selectedDate !== null">
-      <CalendarDateSlots :slots="dates[selectedDate].slots"/>
+      <CalendarDateSlots :slots="dates[selectedDate].slots" :key="selectedDate"/>
     </div>
   </div>
 </template>
