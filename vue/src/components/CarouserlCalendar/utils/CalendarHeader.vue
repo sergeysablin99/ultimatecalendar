@@ -1,5 +1,11 @@
 <script setup>
 let webApp = window.Telegram.WebApp;
+let s = webApp.ThemeParams ? webApp.ThemeParams.bg_color : "none"
+
+// if (webApp.ThemeParams)
+//   s = webApp.ThemeParams.bg_color
+// else
+//   s = "none"
 
 const props = defineProps(['activeLeft', 'activeRight'])
 
@@ -55,7 +61,7 @@ function scrollRight() {
       </div>
     </div>
   </div>
-  <div>{{ "color: " + webApp.bg_color }}</div>
+  <div>{{ "color: " + s }}</div>
 </template>
 
 <style scoped>
