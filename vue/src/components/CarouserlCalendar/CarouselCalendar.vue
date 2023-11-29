@@ -9,6 +9,9 @@ let isActiveScrollLeft = ref(false)
 let isActiveScrollRight = ref(true)
 let selectedDate = ref(null)
 
+let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+let scrollBehavior = isSafari ? "scroll" : "scrollend"
+
 let d = []
 for (let i = 0; i < 100; i++)
   d.push({
@@ -37,8 +40,6 @@ function handleScroll() {
   let container = document.getElementById('calendar-dates')
   isActiveScrollLeft.value = container.scrollLeft > 0
   isActiveScrollRight.value = (container.scrollWidth - container.clientWidth - container.scrollLeft) > 0
-  console.log(isActiveScrollLeft.value, isActiveScrollRight.value)
-  alert("scrolled")
 }
 
 </script>
@@ -49,7 +50,7 @@ function handleScroll() {
       <CalendarHeader :active-left="isActiveScrollLeft" :active-right="isActiveScrollRight"/>
     </div>
     <div id="calendar-dates-row">
-      <div id="calendar-dates" @scrollend="handleScroll">
+      <div id="calendar-dates" @[scrollBehavior]="handleScroll">
         <div class="calendar-date-item" v-for="(d, i) in dates">
           <input :id="`radio-${i}`" type="radio" name="radio" v-model="selectedDate" :value="i">
           <label :for="`radio-${i}`">
