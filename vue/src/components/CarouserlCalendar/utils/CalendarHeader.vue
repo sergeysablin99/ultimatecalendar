@@ -42,8 +42,9 @@ function scrollRight() {
     <div id="calendar-month-name-col">Ноябрь</div>
     <div id="calendar-controls-col">
       <div id="calendar-controls">
-        <button id="calendar-prev-button" class="calendar-control-buttons" @click="scrollLeft">&lt;</button>
-        <button id="calendar-next-button" class="calendar-control-buttons" @click="scrollRight">&gt;</button>
+        <q-btn id="calendar-prev-button" class="calendar-control-buttons" @click="scrollLeft">&lt;</q-btn>
+        <!-- TODO style as telegram -->
+        <q-btn id="calendar-next-button" class="calendar-control-buttons" @click="scrollRight">&gt;</q-btn>
       </div>
     </div>
   </div>
