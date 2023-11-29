@@ -9,13 +9,9 @@ let isActiveScrollLeft = ref(false)
 let isActiveScrollRight = ref(true)
 let selectedDate = ref(null)
 
-let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
 let onscrollendexists = "onscrollend" in window
 let onscrollexists = "onscroll" in window
 let scrollBehavior = onscrollendexists ? "scrollend" : "scroll"
-console.log(window)
-
 let d = []
 for (let i = 0; i < 100; i++)
   d.push({
