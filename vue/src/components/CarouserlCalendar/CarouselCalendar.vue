@@ -4,14 +4,14 @@ import CalendarDateItemContainer from "@/components/CarouserlCalendar/utils/Cale
 import CalendarHeader from "@/components/CarouserlCalendar/utils/CalendarHeader.vue";
 import {ref} from "vue";
 
-let sl = ref(false)
-let sr = ref(true)
+let isActiveScrollLeft = ref(false)
+let isActiveScrollRight = ref(true)
 
 function handleScroll() {
   let container = document.getElementById('calendar-dates')
-  sl.value = container.scrollLeft > 0
-  sr.value = (container.scrollWidth - container.clientWidth - container.scrollLeft) > 0
-  console.log(sl.value, sr.value)
+  isActiveScrollLeft.value = container.scrollLeft > 0
+  isActiveScrollRight.value = (container.scrollWidth - container.clientWidth - container.scrollLeft) > 0
+  console.log(isActiveScrollLeft.value, isActiveScrollRight.value)
 }
 
 </script>
@@ -19,7 +19,7 @@ function handleScroll() {
 <template>
   <div id="calendar-container">
     <div id="calendar-header-row">
-      <CalendarHeader/>
+      <CalendarHeader :active-left="isActiveScrollLeft" :active-right="isActiveScrollRight"/>
     </div>
     <div id="calendar-dates-row">
       <div id="calendar-dates" @scrollend="handleScroll">

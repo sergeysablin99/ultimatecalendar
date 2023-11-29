@@ -1,4 +1,7 @@
 <script setup>
+let webApp = window.Telegram.WebApp;
+
+const props = defineProps(['activeLeft', 'activeRight'])
 
 function scrollLeft() {
   let container = document.getElementById('calendar-dates')
@@ -42,12 +45,17 @@ function scrollRight() {
     <div id="calendar-month-name-col">Ноябрь</div>
     <div id="calendar-controls-col">
       <div id="calendar-controls">
-        <q-btn id="calendar-prev-button" class="calendar-control-buttons" @click="scrollLeft">&lt;</q-btn>
+        <q-btn id="calendar-prev-button" :disable="!props.activeLeft" class="calendar-control-buttons"
+               @click="scrollLeft">&lt;
+        </q-btn>
         <!-- TODO style as telegram -->
-        <q-btn id="calendar-next-button" class="calendar-control-buttons" @click="scrollRight">&gt;</q-btn>
+        <q-btn id="calendar-next-button" :disable="!props.activeRight" class="calendar-control-buttons"
+               @click="scrollRight">&gt;
+        </q-btn>
       </div>
     </div>
   </div>
+  <div>{{ "color: " + webApp.bg_color }}</div>
 </template>
 
 <style scoped>
