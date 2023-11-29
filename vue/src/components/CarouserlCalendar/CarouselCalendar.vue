@@ -10,11 +10,10 @@ let isActiveScrollRight = ref(true)
 let selectedDate = ref(null)
 
 let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-let scrollBehavior = isSafari ? "scroll" : "scrollend"
-
 
 let onscrollendexists = "onscrollend" in window
 let onscrollexists = "onscroll" in window
+let scrollBehavior = onscrollendexists ? "scrollend" : "scroll"
 console.log(window)
 
 let d = []
@@ -70,7 +69,7 @@ function handleScroll() {
     <div id="calendar-slots-row" v-if="selectedDate !== null">
       <CalendarDateSlots :dateInfo="dates[selectedDate]" :key="selectedDate"/>
     </div>
-    <div> {{ onscrollendexists }} {{ onscrollexists }}</div>
+    <div> {{ onscrollendexists }} {{ onscrollexists }} {{ scrollBehavior }}</div>
   </div>
 </template>
 
