@@ -61,7 +61,13 @@ function scrollRight() {
       </div>
     </div>
   </div>
-  <div>{{ "color: " + s }}</div>
+  <div>{{ s.bg_color }}</div>
+  <div>{{ s.text_color }}</div>
+  <div>{{ s.hint_color }}</div>
+  <div>{{ s.link_color }}</div>
+  <div>{{ s.button_color }}</div>
+  <div>{{ s.button_text_color }}</div>
+  <div>{{ s.secondary_bg_color }}</div>
 </template>
 
 <style scoped>
