@@ -9,18 +9,28 @@ let isActiveScrollLeft = ref(false)
 let isActiveScrollRight = ref(true)
 let selectedDate = ref(null)
 
-let dates = ref([
-  {
+let d = []
+for (let i = 0; i < 100; i++)
+  d.push({
     weekDay: "Пн",
     date: 1,
     slots: ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
-  },
-  {
-    weekDay: "Вт",
-    date: 2,
-    slots: ["11:00", "13:00", "15:00", "17:00", "18:00", "21:00"]
-  }
-])
+  })
+
+// let dates = ref([
+//   {
+//     weekDay: "Пн",
+//     date: 1,
+//     slots: ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
+//   },
+//   {
+//     weekDay: "Вт",
+//     date: 2,
+//     slots: ["11:00", "13:00", "15:00", "17:00", "18:00", "21:00"]
+//   }
+// ])
+
+let dates = ref(d)
 
 function handleScroll() {
   let container = document.getElementById('calendar-dates')
