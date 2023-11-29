@@ -51,13 +51,13 @@ function scrollRight() {
     <div id="calendar-month-name-col">Ноябрь</div>
     <div id="calendar-controls-col">
       <div id="calendar-controls">
-        <q-btn id="calendar-prev-button" :disable="!props.activeLeft" class="calendar-control-buttons"
+        <button id="calendar-prev-button" :disabled="!props.activeLeft" class="calendar-control-buttons"
                @click="scrollLeft">&lt;
-        </q-btn>
+        </button>
         <!-- TODO style as telegram -->
-        <q-btn id="calendar-next-button" :disable="!props.activeRight" class="calendar-control-buttons"
+        <button id="calendar-next-button" :disabled="!props.activeRight" class="calendar-control-buttons"
                @click="scrollRight">&gt;
-        </q-btn>
+        </button>
       </div>
     </div>
   </div>
