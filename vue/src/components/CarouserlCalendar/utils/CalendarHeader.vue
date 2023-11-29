@@ -1,6 +1,6 @@
 <script setup>
 let webApp = window.Telegram.WebApp;
-let s = webApp.themeParams.bg_color
+let s = webApp.themeParams
 
 // if (webApp.ThemeParams)
 //   s = webApp.ThemeParams.bg_color
