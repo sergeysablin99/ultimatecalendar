@@ -96,4 +96,9 @@ function scrollRight() {
 #calendar-month-name-col {
   font-size: 18px;
 }
+
+button:disabled {
+  pointer-events: unset !important;
+  cursor: default;
+}
 </style>
