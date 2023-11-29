@@ -38,6 +38,7 @@ function handleScroll() {
   isActiveScrollLeft.value = container.scrollLeft > 0
   isActiveScrollRight.value = (container.scrollWidth - container.clientWidth - container.scrollLeft) > 0
   console.log(isActiveScrollLeft.value, isActiveScrollRight.value)
+  alert("scrolled")
 }
 
 </script>
