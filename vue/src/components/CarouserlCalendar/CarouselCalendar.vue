@@ -2,7 +2,7 @@
 
 import CalendarDateItemContainer from "@/components/CarouserlCalendar/utils/CalendarDateItemContainer.vue";
 import CalendarHeader from "@/components/CarouserlCalendar/utils/CalendarHeader.vue";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import CalendarDateSlots from "@/components/CarouserlCalendar/utils/CalendarDateSlots.vue";
 
 let isActiveScrollLeft = ref(false)
@@ -12,12 +12,24 @@ let selectedDate = ref(null)
 let onscrollendexists = "onscrollend" in window
 let scrollBehavior = onscrollendexists ? "scrollend" : "scroll"
 
+let observableMonth = ref()
 let d = []
-for (let i = 0; i < 100; i++)
+for (let i = 26; i < 31; i++)
   d.push({
     weekDay: "Пн",
     date: i,
-    month: i,
+    month: "Ноябрь",
+    year: 2023,
+    slots: ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30",
+      "13:00", "13:30", "14:00", "14:30", "18:00", "19:00"
+    ]
+  })
+
+for (let i = 0; i < 20; i++)
+  d.push({
+    weekDay: "Пн",
+    date: i,
+    month: "Декабрь",
     year: 2023,
     slots: ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30",
       "13:00", "13:30", "14:00", "14:30", "18:00", "19:00"
@@ -27,10 +39,33 @@ for (let i = 0; i < 100; i++)
 
 let dates = ref(d)
 
+function refreshVisibleMonths() {
+  let container = document.getElementById('calendar-dates')
+  let containerStyle = window.getComputedStyle(container)
+  let elem = document.getElementsByClassName("calendar-date-item")[0]
+  let dateElemStyle = window.getComputedStyle(elem)
+  let width = parseInt(dateElemStyle.width, 10) +
+      parseInt(dateElemStyle.marginLeft, 10) +
+      parseInt(dateElemStyle.marginRight, 10) +
+      parseInt(dateElemStyle.borderLeftWidth, 10) +
+      parseInt(dateElemStyle.borderRightWidth, 10) +
+      parseInt(dateElemStyle.paddingRight, 10) +
+      parseInt(dateElemStyle.paddingLeft, 10)
+
+  let numVisibleDates = Math.floor(parseInt(containerStyle.width, 10) / width)
+  let scrolledDates = Math.floor(container.scrollLeft / width)
+  let visibleMonths = dates.value.slice(0).splice(scrolledDates, numVisibleDates).map(d => d.month)
+  let uniqueVisibleMonths = [...new Set(visibleMonths)]
+  observableMonth.value = uniqueVisibleMonths.join("-")
+}
+
+onMounted(() => refreshVisibleMonths())
+
 function handleScroll() {
   let container = document.getElementById('calendar-dates')
   isActiveScrollLeft.value = container.scrollLeft > 0
   isActiveScrollRight.value = (container.scrollWidth - container.clientWidth - container.scrollLeft) > 0
+  refreshVisibleMonths()
 }
 
 </script>
@@ -38,7 +73,9 @@ function handleScroll() {
 <template>
   <div id="calendar-container">
     <div id="calendar-header-row">
-      <CalendarHeader :active-left="isActiveScrollLeft" :active-right="isActiveScrollRight"/>
+      <CalendarHeader :active-left="isActiveScrollLeft" :active-right="isActiveScrollRight">
+        <template #observable-month>{{ observableMonth }}</template>
+      </CalendarHeader>
     </div>
     <div id="calendar-dates-row">
       <div id="calendar-dates" @[scrollBehavior]="handleScroll">

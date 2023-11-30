@@ -43,7 +43,9 @@ function scrollRight() {
 
 <template>
   <div id="calendar-header">
-    <div id="calendar-month-name-col">Ноябрь</div>
+    <div id="calendar-month-name-col">
+      <slot name="observable-month"></slot>
+    </div>
     <div id="calendar-controls-col">
       <div id="calendar-controls">
         <button id="calendar-prev-button" :disabled="!props.activeLeft" class="calendar-control-buttons"
