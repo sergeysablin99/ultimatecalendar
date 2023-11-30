@@ -10,8 +10,8 @@ let isActiveScrollRight = ref(true)
 let selectedDate = ref(null)
 
 let onscrollendexists = "onscrollend" in window
-let onscrollexists = "onscroll" in window
 let scrollBehavior = onscrollendexists ? "scrollend" : "scroll"
+
 let d = []
 for (let i = 0; i < 100; i++)
   d.push({
@@ -22,18 +22,6 @@ for (let i = 0; i < 100; i++)
     slots: ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
   })
 
-// let dates = ref([
-//   {
-//     weekDay: "Пн",
-//     date: 1,
-//     slots: ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
-//   },
-//   {
-//     weekDay: "Вт",
-//     date: 2,
-//     slots: ["11:00", "13:00", "15:00", "17:00", "18:00", "21:00"]
-//   }
-// ])
 
 let dates = ref(d)
 
@@ -66,7 +54,6 @@ function handleScroll() {
     <div id="calendar-slots-row" v-if="selectedDate !== null">
       <CalendarDateSlots :dateInfo="dates[selectedDate]" :key="selectedDate"/>
     </div>
-    <div> {{ onscrollendexists }} {{ onscrollexists }} {{ scrollBehavior }}</div>
   </div>
 </template>
 
