@@ -24,5 +24,6 @@
   flex-direction: column;
   justify-content: center;
   width: 20px;
+  color: var(--text-color)
 }
 </style>
