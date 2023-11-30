@@ -18,7 +18,7 @@ let webApp = window.Telegram.WebApp
 provide('registration', {registration, registrationUpdate})
 provide('webApp', webApp)
 
-webApp.MainButton.Clicked(() => {
+webApp.MainButton.onClick(() => {
   // webApp.sendData(registration.value)
   alert('send')
   a.value += 1
