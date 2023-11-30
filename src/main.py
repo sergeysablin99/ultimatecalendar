@@ -12,6 +12,7 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
+    print(message)
     bot.send_message(message.chat.id, message.text)
     # markup = types.ReplyKeyboardMarkup(row_width=3)
     # itembtn1 = types.WebAppInfo('https://sergeysablin99.github.io/ultimatecalendar/')

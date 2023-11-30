@@ -18,7 +18,7 @@ let webApp = window.Telegram.WebApp
 provide('registration', {registration, registrationUpdate})
 provide('webApp', webApp)
 
-webApp.MainButton.onClick(() => {
+webApp.MainButton.onClick(function () {
       webApp.sendData(registration.value)
   alert('send')
     }
@@ -32,6 +32,7 @@ webApp.MainButton.onClick(() => {
   <div>{{ webApp.initData }}</div>
 </template>
 
+<!--suppress CssUnresolvedCustomProperty -->
 <style>
 
 :root {
