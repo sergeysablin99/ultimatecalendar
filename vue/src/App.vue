@@ -18,8 +18,9 @@ let webApp = window.Telegram.WebApp
 provide('registration', {registration, registrationUpdate})
 provide('webApp', webApp)
 
-webApp.MainButton.onClick(() =>
-    webApp.sendData(registration.value)
+webApp.MainButton.onClick(() => {
+      webApp.sendData(registration.value)
+    }
 )
 
 
@@ -27,6 +28,7 @@ webApp.MainButton.onClick(() =>
 
 <template>
   <CarouselCalendar/>
+  <div>{{ webApp.initData }}</div>
 </template>
 
 <style>
