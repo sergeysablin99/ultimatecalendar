@@ -30,7 +30,7 @@ webApp.MainButton.onClick(function () {
 
 <template>
   <CarouselCalendar/>
-  <div>{{ a.value }}</div>
+  <div>{{ a }}</div>
 </template>
 
 <!--suppress CssUnresolvedCustomProperty -->
