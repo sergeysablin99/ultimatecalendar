@@ -1,27 +1,23 @@
 <script setup>
-import {onBeforeUnmount, ref} from "vue";
+import {inject, onBeforeUnmount, ref} from "vue";
 
 const props = defineProps(['dateInfo'])
 let selectedSlot = ref(null)
+let {registration, registrationUpdate} = inject('registration')
 
-let webApp = window.Telegram.WebApp;
+let webApp = inject('webApp');
 var MainButton = webApp.MainButton;
 
-
 function slotClicked(num) {
-  MainButton.setText(
-      "Selected date:" +
-      props.dateInfo.date +
-      " month: " +
-      props.dateInfo.month +
-      " slot: " +
-      props.dateInfo.slots[num]
-  )
-  MainButton.show();
+  MainButton.setText("Записаться")
+  MainButton.show()
+
+  registrationUpdate([props.dateInfo.date, props.dateInfo.month, props.dateInfo.year].join('.'), props.dateInfo.slots[num])
+
 }
 
 onBeforeUnmount(async () => {
-  MainButton.hide();
+  MainButton.hide()
 })
 
 
@@ -42,12 +38,11 @@ onBeforeUnmount(async () => {
 .calendar-date-item-slot-container {
   display: flex;
   flex-direction: row;
-//font-size: 18px;
 }
 
 .calendar-date-item-slot-item {
   border: 1px solid black;
-  border-radius: 10%;
+  border-radius: var(--border-radius);
   margin: 5px 5px;
   padding: 5px 5px;
   justify-content: start;
@@ -64,11 +59,8 @@ onBeforeUnmount(async () => {
 
 /* Checked */
 .calendar-date-item-slot-item:has(input[type=radio]:checked) {
-  background: #ffe0a6; /* TODO telegram styles */
+  background: var(--button-color);
+  color: var(--button-text-color);
 }
 
-/* Hover */
-.calendar-date-item-slot-item:hover {
-  background-color: #000;
-}
 </style>

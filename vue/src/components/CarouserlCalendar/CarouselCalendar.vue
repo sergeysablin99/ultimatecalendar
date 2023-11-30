@@ -18,6 +18,7 @@ for (let i = 0; i < 100; i++)
     weekDay: "Пн",
     date: i,
     month: i,
+    year: 2023,
     slots: ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
   })
 
@@ -75,7 +76,7 @@ function handleScroll() {
   flex-direction: column;
   width: 100%;
   height: max-content;
-  padding: 0% 1%;
+  padding: 0 1%;
   box-sizing: border-box;
 }
 
@@ -97,11 +98,12 @@ function handleScroll() {
 
 .calendar-date-item {
   border: 1px solid black;
-  border-radius: 10%;
+  border-radius: var(--border-radius);
   margin: 5px 5px;
   padding: 5px 5px;
   justify-content: center;
   flex-shrink: 0;
+  background-color: var(--secondary-bg-color);
 }
 
 .calendar-date-item input[type=radio] {
@@ -114,17 +116,9 @@ function handleScroll() {
 
 /* Checked */
 .calendar-date-item:has(input[type=radio]:checked) {
-  background: #ffe0a6; /* TODO telegram styles */
+  background: var(--button-color);
+  color: var(--button-text-color);
 }
 
-/* Hover */
-.calendar-date-item:hover {
-  background-color: #000;
-}
 
-/* Disabled
-.calendar-date-item input[type=radio]:disabled + label {
-  background: #efefef;
-  color: #666;
-}*/
 </style>
