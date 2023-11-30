@@ -1,6 +1,6 @@
 <script setup>
 import CarouselCalendar from "@/components/CarouserlCalendar/CarouselCalendar.vue";
-import {provide, ref} from "vue";
+import {onMounted, provide, ref} from "vue";
 
 let a = ref('0')
 let registration = ref({
@@ -18,14 +18,13 @@ let webApp = window.Telegram.WebApp
 provide('registration', {registration, registrationUpdate})
 provide('webApp', webApp)
 
-webApp.MainButton.onClick(function () {
-      webApp.sendData(registration.value)
-  alert('send')
-  a.value += 1
-    }
-)
-
-
+onMounted(() => {
+  window.Telegram.WebApp.onEvent('mainButtonClicked', () => {
+    webApp.sendData(registration.value)
+    alert('send')
+    a.value += 1
+  })
+})
 </script>
 
 <template>
