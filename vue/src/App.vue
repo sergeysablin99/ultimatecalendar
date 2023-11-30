@@ -34,22 +34,10 @@ webApp.MainButton.onClick(() => {
   webApp.close()
 })
 
-webApp.onEvent("themeChanged", () => {
-  alert("themeChanged")
-  console.log(tp)
-  // bg_color.value = ref(tp.bg_color)
-  // text_color.value = ref(tp.text_color)
-  // hint_color.value = ref(tp.hint_color)
-  // link_color.value = ref(tp.link_color)
-  // button_color.value = ref(tp.button_color)
-  // button_text_color.value = ref(tp.button_text_color)
-  // secondary_bg_color.value = ref(tp.secondary_bg_color)
-})
 </script>
 
 <template>
   <CarouselCalendar/>
-  <div style="color: red">{{ t.WebApp.themeParams }}</div>
 </template>
 
 <!--suppress CssUnresolvedCustomProperty -->
