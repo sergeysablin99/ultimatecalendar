@@ -2,7 +2,7 @@
 import CarouselCalendar from "@/components/CarouserlCalendar/CarouselCalendar.vue";
 import {provide, ref} from "vue";
 
-
+let a = ref('0')
 let registration = ref({
   date: null,
   slot: null,
@@ -21,6 +21,7 @@ provide('webApp', webApp)
 webApp.MainButton.onClick(function () {
       webApp.sendData(registration.value)
   alert('send')
+  a.value += 1
     }
 )
 
@@ -29,7 +30,7 @@ webApp.MainButton.onClick(function () {
 
 <template>
   <CarouselCalendar/>
-  <div>{{ webApp.initData }}</div>
+  <div>{{ a.value }}</div>
 </template>
 
 <!--suppress CssUnresolvedCustomProperty -->
