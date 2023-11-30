@@ -14,7 +14,7 @@ def send_welcome(message):
 def echo_all(message):
     print(message)
     # bot.send_message(message.chat.id, message.text)
-    markup = types.ReplyKeyboardMarkup(row_width=3)
+    markup = types.ReplyKeyboardMarkup(row_width=1)
     itembtn1 = types.WebAppInfo('https://sergeysablin99.github.io/ultimatecalendar/')
     bnt1 = types.KeyboardButton("twa", web_app=itembtn1)
     markup.add(bnt1)
