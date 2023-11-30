@@ -20,7 +20,7 @@ provide('webApp', webApp)
 
 onMounted(() => {
   window.Telegram.WebApp.onEvent('mainButtonClicked', () => {
-    webApp.sendData(registration.value)
+    // webApp.sendData(registration.value)
     alert('send')
     a.value += 1
   })
