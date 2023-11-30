@@ -49,7 +49,6 @@ function scrollRight() {
         <button id="calendar-prev-button" :disabled="!props.activeLeft" class="calendar-control-buttons"
                @click="scrollLeft">&lt;
         </button>
-        <!-- TODO style as telegram -->
         <button id="calendar-next-button" :disabled="!props.activeRight" class="calendar-control-buttons"
                @click="scrollRight">&gt;
         </button>
@@ -87,18 +86,24 @@ function scrollRight() {
 
 .calendar-control-buttons {
   margin: 5px 5px;
-  border: 1px solid black;
-  padding: 1px 4px;
+//border: 1px solid black; //border-radius: var(--border-radius); padding: 5px 5px;
   background-color: transparent;
-  text-align: center;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: var(--heading-font-size);
+  color: var(--link-color);
 }
 
 #calendar-month-name-col {
-  font-size: 18px;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: var(--heading-font-size);
 }
 
 button:disabled {
   pointer-events: unset !important;
   cursor: default;
+  color: var(--hint-color);
 }
 </style>

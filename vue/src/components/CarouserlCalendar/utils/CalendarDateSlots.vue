@@ -42,7 +42,7 @@ onBeforeUnmount(async () => {
 .calendar-date-item-slot-container {
   display: flex;
   flex-direction: row;
-  font-size: 18px;
+//font-size: 18px;
 }
 
 .calendar-date-item-slot-item {
