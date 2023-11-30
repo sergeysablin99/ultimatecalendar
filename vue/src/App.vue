@@ -20,6 +20,7 @@ provide('webApp', webApp)
 
 webApp.MainButton.onClick(() => {
       webApp.sendData(registration.value)
+  alert('send')
     }
 )
 
