@@ -14,6 +14,7 @@ function registrationUpdate(date, slot) {
 }
 
 let webApp = window.Telegram.WebApp
+let t = ref(window.Telegram)
 let tp = webApp.themeParams
 
 let bg_color = ref(tp.bg_color)
@@ -48,7 +49,7 @@ webApp.onEvent("themeChanged", () => {
 
 <template>
   <CarouselCalendar/>
-  <div>{{ tp }}</div>
+  <div style="color: red">{{ t.WebApp.themeParams }}</div>
 </template>
 
 <!--suppress CssUnresolvedCustomProperty -->
