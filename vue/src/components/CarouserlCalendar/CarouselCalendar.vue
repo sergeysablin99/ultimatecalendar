@@ -19,7 +19,9 @@ for (let i = 0; i < 100; i++)
     date: i,
     month: i,
     year: 2023,
-    slots: ["10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
+    slots: ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30",
+      "13:00", "13:30", "14:00", "14:30", "18:00", "19:00"
+    ]
   })
 
 
@@ -87,7 +89,7 @@ function handleScroll() {
   border: 1px solid black;
   border-radius: var(--border-radius);
   margin: 5px 5px;
-  padding: 5px 5px;
+  padding: 10px 10px;
   justify-content: center;
   flex-shrink: 0;
   background-color: var(--secondary-bg-color);
