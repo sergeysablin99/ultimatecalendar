@@ -47,6 +47,8 @@ onBeforeUnmount(async () => {
   padding: 5px 5px;
   justify-content: start;
   flex-shrink: 0;
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color)
 }
 
 .calendar-date-item-slot-item input[type=radio] {
