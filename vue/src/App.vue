@@ -22,6 +22,8 @@ webApp.MainButton.onClick(() => {
   alert('send')
   webApp.close()
 })
+
+webApp.onEvent("themeChanged", () => alert("theme changed"))
 </script>
 
 <template>
